@@ -1,30 +1,31 @@
 #include <stdio.h>
+
 /**
- * main - Entry point
- *
- * codes for printing all possible combination of two d/t digits
- * in ascending order and separated by a comma followed by a space.
- *
- * Return: 0 Success
+ *main - prints alphabet
+ *Description: Using the main function
+ *This program prints to stderr
+ *Return: 0
  */
 int main(void)
 {
-	int i,j;
+	int i;
+	int j;
+	int comma = ',';
+	int space = ' ';
 
-	for (i = 0; i < 9; i++)
+	for (i = '0'; i <= '8'; i++)
 	{
-		for (j = 1; j < 9; j++)
+		for (j = '1'; j <= '9'; j++)
 		{
-			if (j > i)
+			if (i < j)
 			{
-				putchar(i + '0');
-				putchar(j + '0');
-				
-				if (i != 8)
-				{
+				putchar(i);
+				putchar(j);
 
-					putchar(',');
-					putchar(' ');
+				if (i < '8' || j < '9')
+				{
+					putchar(comma);
+					putchar(space);
 				}
 			}
 		}
